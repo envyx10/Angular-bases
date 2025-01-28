@@ -1,0 +1,35 @@
+<h1>DBZ Personajes</h1>
+
+<hr>
+
+<div class="row">
+
+  <div class="col">
+
+    <dbz-list
+    [characterList]="characters"
+    (onDelete)="onDeleteCharacter($event)"
+    
+    >
+
+    </dbz-list>
+
+  </div>
+
+  <div class="col">
+
+  <!--
+
+   * (onNewCharacter)="onNewCharacter($event)": Aquí estás escuchando
+   * el evento onNewCharacter que se emite desde el componente dbz-add-character.
+   * Cuando el evento se emite, se llama al método onNewCharacter
+   * en el componente padre y se pasa el valor emitido ($event) como argumento.
+
+   -->
+    <dbz-add-character
+    (onNewCharacter)="onNewCharacter($event)">
+    </dbz-add-character>
+
+  </div>
+
+</div>
